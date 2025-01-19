@@ -31,6 +31,13 @@
             border: 1px solid #ddd;
             border-radius: 8px;
             background-color: #f9f9f9;
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            width: 50px;
+            height: 50px;
+            margin-right: 1rem;
         }
         .match h3 {
             margin: 0 0 0.5rem 0;
@@ -58,21 +65,30 @@
     </header>
     <div class="container">
         <div class="match">
-            <h3>Manchester United vs Liverpool</h3>
-            <button class="predict-btn" onclick="predictResult('match1')">Prediksi</button>
-            <p class="prediction" id="match1-prediction"></p>
+            <img src="https://via.placeholder.com/50" alt="Logo Manchester United" class="logo">
+            <div>
+                <h3>Manchester United vs Liverpool</h3>
+                <button class="predict-btn" onclick="predictResult('match1')">Prediksi</button>
+                <p class="prediction" id="match1-prediction"></p>
+            </div>
         </div>
 
         <div class="match">
-            <h3>Barcelona vs Real Madrid</h3>
-            <button class="predict-btn" onclick="predictResult('match2')">Prediksi</button>
-            <p class="prediction" id="match2-prediction"></p>
+            <img src="https://via.placeholder.com/50" alt="Logo Barcelona" class="logo">
+            <div>
+                <h3>Barcelona vs Real Madrid</h3>
+                <button class="predict-btn" onclick="predictResult('match2')">Prediksi</button>
+                <p class="prediction" id="match2-prediction"></p>
+            </div>
         </div>
 
         <div class="match">
-            <h3>Bayern Munich vs PSG</h3>
-            <button class="predict-btn" onclick="predictResult('match3')">Prediksi</button>
-            <p class="prediction" id="match3-prediction"></p>
+            <img src="https://via.placeholder.com/50" alt="Logo Bayern Munich" class="logo">
+            <div>
+                <h3>Bayern Munich vs PSG</h3>
+                <button class="predict-btn" onclick="predictResult('match3')">Prediksi</button>
+                <p class="prediction" id="match3-prediction"></p>
+            </div>
         </div>
     </div>
 
