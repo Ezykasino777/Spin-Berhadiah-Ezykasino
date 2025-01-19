@@ -69,6 +69,14 @@
             margin-top: 1rem;
             font-weight: bold;
         }
+        .statistics {
+            margin-top: 1rem;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+        .statistics p {
+            margin: 0.5rem 0;
+        }
     </style>
 </head>
 <body>
@@ -89,6 +97,7 @@
             </div>
             <button class="predict-btn" onclick="predictResult('match1')">Prediksi</button>
             <p class="prediction" id="match1-prediction"></p>
+            <div class="statistics" id="match1-statistics"></div>
         </div>
 
         <div class="match">
@@ -104,6 +113,7 @@
             </div>
             <button class="predict-btn" onclick="predictResult('match2')">Prediksi</button>
             <p class="prediction" id="match2-prediction"></p>
+            <div class="statistics" id="match2-statistics"></div>
         </div>
 
         <div class="match">
@@ -119,6 +129,7 @@
             </div>
             <button class="predict-btn" onclick="predictResult('match3')">Prediksi</button>
             <p class="prediction" id="match3-prediction"></p>
+            <div class="statistics" id="match3-statistics"></div>
         </div>
     </div>
 
@@ -137,8 +148,22 @@
             // Generate a random prediction
             const randomPrediction = predictions[Math.floor(Math.random() * predictions.length)];
 
+            // Generate random statistics
+            const randomGoals = Math.floor(Math.random() * 5) + 1;
+            const winPercentage = Math.floor(Math.random() * 50) + 30;
+            const drawPercentage = Math.floor(Math.random() * 20) + 10;
+            const losePercentage = 100 - winPercentage - drawPercentage;
+
             // Display the prediction
             document.getElementById(`${matchId}-prediction`).innerText = randomPrediction;
+
+            // Display the statistics
+            document.getElementById(`${matchId}-statistics`).innerHTML = `
+                <p>Jumlah Gol: ${randomGoals}</p>
+                <p>Persentase Menang: ${winPercentage}%</p>
+                <p>Persentase Imbang: ${drawPercentage}%</p>
+                <p>Persentase Kalah: ${losePercentage}%</p>
+            `;
         }
     </script>
 </body>
