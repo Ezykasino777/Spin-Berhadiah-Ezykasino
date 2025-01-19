@@ -83,6 +83,11 @@
             border: 1px solid #ddd;
             border-radius: 5px;
         }
+        .goal-display {
+            margin-top: 1rem;
+            font-weight: bold;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -110,6 +115,7 @@
                 <input type="number" id="match1-draw" placeholder="Imbang" min="0" max="100">
             </div>
             <button class="predict-btn" onclick="updateStatistics('match1')">Tampilkan Statistik</button>
+            <div class="goal-display" id="match1-goal-display"></div> <!-- Goal display here -->
             <div class="statistics" id="match1-statistics"></div>
         </div>
 
@@ -124,8 +130,12 @@
             const drawPercentage = document.getElementById(`${matchId}-draw`).value || Math.floor(Math.random() * 20) + 10;
             const losePercentage = 100 - winPercentage - drawPercentage;
 
+            // Display goal only after clicking the button
+            document.getElementById(`${matchId}-goal-display`).innerText = `Jumlah Gol: ${goals}`;
+            document.getElementById(`${matchId}-goal-display`).style.display = 'block'; // Show the goal display
+
+            // You can display other statistics if needed
             document.getElementById(`${matchId}-statistics`).innerHTML = `
-                <p>Jumlah Gol: ${goals}</p>
                 <p>Persentase Menang: ${winPercentage}%</p>
                 <p>Persentase Imbang: ${drawPercentage}%</p>
                 <p>Persentase Kalah: ${losePercentage}%</p>
