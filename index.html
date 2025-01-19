@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediksi Bola</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .match {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .match h3 {
+            margin: 0 0 0.5rem 0;
+        }
+        .predict-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .predict-btn:hover {
+            background-color: #2980b9;
+        }
+        .prediction {
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Prediksi Bola</h1>
+    </header>
+    <div class="container">
+        <div class="match">
+            <h3>Manchester United vs Liverpool</h3>
+            <button class="predict-btn" onclick="predictResult('match1')">Prediksi</button>
+            <p class="prediction" id="match1-prediction"></p>
+        </div>
+
+        <div class="match">
+            <h3>Barcelona vs Real Madrid</h3>
+            <button class="predict-btn" onclick="predictResult('match2')">Prediksi</button>
+            <p class="prediction" id="match2-prediction"></p>
+        </div>
+
+        <div class="match">
+            <h3>Bayern Munich vs PSG</h3>
+            <button class="predict-btn" onclick="predictResult('match3')">Prediksi</button>
+            <p class="prediction" id="match3-prediction"></p>
+        </div>
+    </div>
+
+    <script>
+        function predictResult(matchId) {
+            const predictions = [
+                "Manchester United akan menang!",
+                "Liverpool akan menang!",
+                "Hasil seri!",
+                "Barcelona akan menang!",
+                "Real Madrid akan menang!",
+                "PSG akan menang!",
+                "Bayern Munich akan menang!",
+            ];
+
+            // Generate a random prediction
+            const randomPrediction = predictions[Math.floor(Math.random() * predictions.length)];
+
+            // Display the prediction
+            document.getElementById(`${matchId}-prediction`).innerText = randomPrediction;
+        }
+    </script>
+</body>
+</html>
