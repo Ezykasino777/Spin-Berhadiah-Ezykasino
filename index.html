@@ -33,11 +33,17 @@
             background-color: #f9f9f9;
             text-align: center;
         }
+        .team {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
         .team-logos {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 1rem;
+            gap: 2rem;
             margin-bottom: 0.5rem;
         }
         .logo {
@@ -76,12 +82,14 @@
     <div class="container">
         <div class="match">
             <div class="team-logos">
-                <img src="https://i.ibb.co/VScrNGP/MU.jpg" alt="Logo Manchester United" class="logo">
-                <img src="https://i.ibb.co/hK3L6d1/LIVERPOLL.jpg" alt="Logo Liverpool" class="logo">
-            </div>
-            <div class="team-names">
-                <span>Manchester United</span>
-                <span>Liverpool</span>
+                <div class="team">
+                    <img src="https://via.placeholder.com/50" alt="Logo Manchester United" class="logo">
+                    <span>Manchester United</span>
+                </div>
+                <div class="team">
+                    <img src="https://via.placeholder.com/50" alt="Logo Liverpool" class="logo">
+                    <span>Liverpool</span>
+                </div>
             </div>
             <button class="predict-btn" onclick="predictResult('match1')">Prediksi</button>
             <p class="prediction" id="match1-prediction"></p>
@@ -89,12 +97,14 @@
 
         <div class="match">
             <div class="team-logos">
-                <img src="https://i.ibb.co/1T5np8p/BARCA.png" alt="Logo Barcelona" class="logo">
-                <img src="https://i.ibb.co/zbK0qTH/Madrid.jpg" alt="Logo Real Madrid" class="logo">
-            </div>
-            <div class="team-names">
-                <span>Barcelona</span>
-                <span>Real Madrid</span>
+                <div class="team">
+                    <img src="https://via.placeholder.com/50" alt="Logo Barcelona" class="logo">
+                    <span>Barcelona</span>
+                </div>
+                <div class="team">
+                    <img src="https://via.placeholder.com/50" alt="Logo Real Madrid" class="logo">
+                    <span>Real Madrid</span>
+                </div>
             </div>
             <button class="predict-btn" onclick="predictResult('match2')">Prediksi</button>
             <p class="prediction" id="match2-prediction"></p>
@@ -102,12 +112,14 @@
 
         <div class="match">
             <div class="team-logos">
-                <img src="https://i.ibb.co/G59vJsX/MUCHEN.png" alt="Logo Bayern Munich" class="logo">
-                <img src="https://i.ibb.co/7RFDBGw/PSG.png" alt="Logo PSG" class="logo">
-            </div>
-            <div class="team-names">
-                <span>Bayern Munich</span>
-                <span>PSG</span>
+                <div class="team">
+                    <img src="https://via.placeholder.com/50" alt="Logo Bayern Munich" class="logo">
+                    <span>Bayern Munich</span>
+                </div>
+                <div class="team">
+                    <img src="https://via.placeholder.com/50" alt="Logo PSG" class="logo">
+                    <span>PSG</span>
+                </div>
             </div>
             <button class="predict-btn" onclick="predictResult('match3')">Prediksi</button>
             <p class="prediction" id="match3-prediction"></p>
