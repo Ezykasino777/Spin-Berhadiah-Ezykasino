@@ -65,10 +65,9 @@
         .predict-btn:hover {
             background-color: #2980b9;
         }
-        .goal-display {
+        .prediction {
             margin-top: 1rem;
             font-weight: bold;
-            display: none;
         }
         .statistics {
             margin-top: 1rem;
@@ -77,16 +76,6 @@
         }
         .statistics p {
             margin: 0.5rem 0;
-        }
-        .input-container {
-            margin-top: 1rem;
-        }
-        input[type="number"] {
-            padding: 0.5rem;
-            margin: 0.5rem;
-            width: 80px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
         }
     </style>
 </head>
@@ -98,54 +87,83 @@
         <div class="match">
             <div class="team-logos">
                 <div class="team">
-                    <img src="https://i.ibb.co/VScrNGP/MU.jpg" alt="Logo Manchester United" class="logo">
+                    <img src="https://via.placeholder.com/50" alt="Logo Manchester United" class="logo">
                     <span>Manchester United</span>
                 </div>
                 <div class="team">
-                    <img src="https://i.ibb.co/hK3L6d1/LIVERPOLL.jpg" alt="Logo Liverpool" class="logo">
+                    <img src="https://via.placeholder.com/50" alt="Logo Liverpool" class="logo">
                     <span>Liverpool</span>
                 </div>
             </div>
-            <div class="input-container">
-                <label for="match1-goals">Jumlah Gol: </label>
-                <input type="number" id="match1-goals" placeholder="Isi jumlah gol">
-
-                <label for="match1-win">Persentase Menang: </label>
-                <input type="number" id="match1-win" placeholder="Isi persentase menang" min="0" max="100">
-
-                <label for="match1-draw">Persentase Imbang: </label>
-                <input type="number" id="match1-draw" placeholder="Isi persentase imbang" min="0" max="100">
-            </div>
-            <button class="predict-btn" onclick="showStatistics('match1')">Tampilkan Statistik</button>
-
-            <div class="goal-display" id="match1-goal-display"></div> <!-- Goal display here -->
+            <button class="predict-btn" onclick="predictResult('match1')">Prediksi</button>
+            <p class="prediction" id="match1-prediction"></p>
             <div class="statistics" id="match1-statistics"></div>
         </div>
 
-        <!-- Repeat for other matches... -->
+        <div class="match">
+            <div class="team-logos">
+                <div class="team">
+                    <img src="https://via.placeholder.com/50" alt="Logo Barcelona" class="logo">
+                    <span>Barcelona</span>
+                </div>
+                <div class="team">
+                    <img src="https://via.placeholder.com/50" alt="Logo Real Madrid" class="logo">
+                    <span>Real Madrid</span>
+                </div>
+            </div>
+            <button class="predict-btn" onclick="predictResult('match2')">Prediksi</button>
+            <p class="prediction" id="match2-prediction"></p>
+            <div class="statistics" id="match2-statistics"></div>
+        </div>
 
+        <div class="match">
+            <div class="team-logos">
+                <div class="team">
+                    <img src="https://via.placeholder.com/50" alt="Logo Bayern Munich" class="logo">
+                    <span>Bayern Munich</span>
+                </div>
+                <div class="team">
+                    <img src="https://via.placeholder.com/50" alt="Logo PSG" class="logo">
+                    <span>PSG</span>
+                </div>
+            </div>
+            <button class="predict-btn" onclick="predictResult('match3')">Prediksi</button>
+            <p class="prediction" id="match3-prediction"></p>
+            <div class="statistics" id="match3-statistics"></div>
+        </div>
     </div>
 
     <script>
-        function showStatistics(matchId) {
-            // Grab the input values (empty if not filled)
-            const goals = document.getElementById(`${matchId}-goals`).value;
-            const winPercentage = document.getElementById(`${matchId}-win`).value;
-            const drawPercentage = document.getElementById(`${matchId}-draw`).value;
+        function predictResult(matchId) {
+            const predictions = [
+                "Manchester United akan menang!",
+                "Liverpool akan menang!",
+                "Hasil seri!",
+                "Barcelona akan menang!",
+                "Real Madrid akan menang!",
+                "PSG akan menang!",
+                "Bayern Munich akan menang!",
+            ];
 
-            // Display the goals only after clicking the button
-            if (goals) {
-                document.getElementById(`${matchId}-goal-display`).innerText = `Jumlah Gol: ${goals}`;
-                document.getElementById(`${matchId}-goal-display`).style.display = 'block'; // Show the goal display
-            }
+            // Generate a random prediction
+            const randomPrediction = predictions[Math.floor(Math.random() * predictions.length)];
 
-            // Display the rest of the statistics if the values are entered
-            if (winPercentage || drawPercentage) {
-                document.getElementById(`${matchId}-statistics`).innerHTML = `
-                    <p>Persentase Menang: ${winPercentage || 'Belum diisi'}%</p>
-                    <p>Persentase Imbang: ${drawPercentage || 'Belum diisi'}%</p>
-                `;
-            }
+            // Generate random statistics
+            const randomGoals = Math.floor(Math.random() * 5) + 1;
+            const winPercentage = Math.floor(Math.random() * 50) + 30;
+            const drawPercentage = Math.floor(Math.random() * 20) + 10;
+            const losePercentage = 100 - winPercentage - drawPercentage;
+
+            // Display the prediction
+            document.getElementById(`${matchId}-prediction`).innerText = randomPrediction;
+
+            // Display the statistics
+            document.getElementById(`${matchId}-statistics`).innerHTML = `
+                <p>Jumlah Gol: ${randomGoals}</p>
+                <p>Persentase Menang: ${winPercentage}%</p>
+                <p>Persentase Imbang: ${drawPercentage}%</p>
+                <p>Persentase Kalah: ${losePercentage}%</p>
+            `;
         }
     </script>
 </body>
