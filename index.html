@@ -16,7 +16,10 @@
             background-color: #2c3e50;
             color: white;
             text-align: center;
-            padding: 1rem;
+            padding: 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
         .advertisement {
@@ -24,24 +27,35 @@
             padding: 1rem;
             text-align: center;
             border-bottom: 1px solid #ddd;
+            margin-bottom: 1rem;
         }
 
         .menu {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             background-color: #34495e;
-            padding: 1rem 0;
+            padding: 0.5rem 0;
+            position: sticky;
+            top: 60px;
+            z-index: 9;
         }
 
         .menu a {
             color: white;
             text-decoration: none;
             font-weight: bold;
+            margin: 0 1rem;
+            padding: 0.5rem 1rem;
+        }
+
+        .menu a:hover {
+            background-color: #2c3e50;
+            border-radius: 5px;
         }
 
         .content {
-            max-width: 900px;
-            margin: 2rem auto;
+            max-width: 1200px;
+            margin: 1rem auto;
             padding: 1rem;
             background: white;
             border-radius: 8px;
@@ -49,7 +63,7 @@
         }
 
         .section-title {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             color: #34495e;
             margin-bottom: 0.5rem;
             border-bottom: 2px solid #ddd;
@@ -78,6 +92,7 @@
 
         .team {
             text-align: center;
+            width: 40%;
         }
 
         .team span {
@@ -87,8 +102,10 @@
         }
 
         .score {
-            font-size: 1.5rem;
+            font-size: 2rem;
             font-weight: bold;
+            width: 20%;
+            text-align: center;
         }
 
         .status {
@@ -97,80 +114,109 @@
             font-weight: bold;
             margin-bottom: 0.5rem;
         }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        .live-updates {
+            background: #e74c3c;
+            color: white;
+            text-align: center;
+            padding: 0.5rem;
+            margin: 1rem 0;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .highlight {
+            background: #f1c40f;
+            color: black;
+            font-weight: bold;
+            padding: 0.2rem 0.5rem;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Football Live Scores</h1>
-        <p>Latest Football Results, EPL, LaLiga, Serie A, Champions League</p>
+        <p>Stay updated with the latest results, standings, and match highlights</p>
     </header>
-
-    <div class="advertisement">Advertisement</div>
 
     <div class="menu">
         <a href="#scores">Scores</a>
+        <a href="#live">Live</a>
+        <a href="#standings">Standings</a>
         <a href="#news">News</a>
-        <a href="#login">Login</a>
+        <a href="#tickets">Buy Tickets</a>
     </div>
 
+    <div class="advertisement">Advertisement - Your Ad Here</div>
+
     <div class="content">
+        <!-- Live Updates -->
+        <div class="live-updates">LIVE Updates: Matches in progress now!</div>
+
         <!-- Premier League -->
         <div class="section">
-            <h2 class="section-title">ENGLAND : Premier League</h2>
+            <h2 class="section-title">ENGLAND: Premier League</h2>
             <div class="match">
-                <div class="match-header">Live Standings</div>
-                <div class="status">LIVE: 82'</div>
+                <div class="match-header">LIVE: 65'</div>
                 <div class="match-details">
                     <div class="team">
-                        <span>Arsenal</span>
+                        <span>Manchester City</span>
                     </div>
-                    <div class="score">2 - 0</div>
+                    <div class="score highlight">3 - 2</div>
                     <div class="team">
-                        <span>Everton</span>
+                        <span>Tottenham</span>
                     </div>
                 </div>
             </div>
             <div class="match">
-                <div class="match-header">Finished</div>
-                <div class="status">Final</div>
+                <div class="match-header">Scheduled</div>
+                <div class="status">19:30</div>
                 <div class="match-details">
                     <div class="team">
-                        <span>Liverpool</span>
+                        <span>Arsenal</span>
                     </div>
-                    <div class="score">3 - 1</div>
+                    <div class="score">-</div>
                     <div class="team">
-                        <span>Manchester United</span>
+                        <span>Brighton</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- La Liga -->
+        <!-- Champions League -->
         <div class="section">
-            <h2 class="section-title">SPAIN : LaLiga</h2>
+            <h2 class="section-title">EUROPE: Champions League</h2>
             <div class="match">
-                <div class="match-header">Live Standings</div>
-                <div class="status">LIVE: 45'</div>
+                <div class="match-header">LIVE: 30'</div>
                 <div class="match-details">
                     <div class="team">
-                        <span>Real Madrid</span>
+                        <span>Bayern Munich</span>
                     </div>
-                    <div class="score">1 - 0</div>
+                    <div class="score highlight">1 - 1</div>
                     <div class="team">
-                        <span>Sevilla</span>
+                        <span>PSG</span>
                     </div>
                 </div>
             </div>
             <div class="match">
-                <div class="match-header">Finished</div>
-                <div class="status">Final</div>
+                <div class="match-header">Scheduled</div>
+                <div class="status">21:00</div>
                 <div class="match-details">
                     <div class="team">
-                        <span>Barcelona</span>
+                        <span>Real Madrid</span>
                     </div>
-                    <div class="score">2 - 1</div>
+                    <div class="score">-</div>
                     <div class="team">
-                        <span>Atletico Madrid</span>
+                        <span>Inter Milan</span>
                     </div>
                 </div>
             </div>
@@ -178,20 +224,7 @@
 
         <!-- Serie A -->
         <div class="section">
-            <h2 class="section-title">ITALY : Serie A</h2>
-            <div class="match">
-                <div class="match-header">Scheduled</div>
-                <div class="status">19:00</div>
-                <div class="match-details">
-                    <div class="team">
-                        <span>Inter Milan</span>
-                    </div>
-                    <div class="score">-</div>
-                    <div class="team">
-                        <span>AC Milan</span>
-                    </div>
-                </div>
-            </div>
+            <h2 class="section-title">ITALY: Serie A</h2>
             <div class="match">
                 <div class="match-header">Finished</div>
                 <div class="status">Final</div>
@@ -199,33 +232,19 @@
                     <div class="team">
                         <span>Napoli</span>
                     </div>
-                    <div class="score">4 - 2</div>
+                    <div class="score">2 - 0</div>
                     <div class="team">
-                        <span>Juventus</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Europa League -->
-        <div class="section">
-            <h2 class="section-title">EUROPE : Europa League</h2>
-            <div class="match">
-                <div class="match-header">Upcoming</div>
-                <div class="status">21:00</div>
-                <div class="match-details">
-                    <div class="team">
-                        <span>AS Roma</span>
-                    </div>
-                    <div class="score">-</div>
-                    <div class="team">
-                        <span>Feyenoord</span>
+                        <span>Roma</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="advertisement">Advertisement</div>
+    <div class="advertisement">Advertisement - Special Offers Available!</div>
+
+    <footer>
+        <p>&copy; 2025 Football Live Scores. All rights reserved.</p>
+    </footer>
 </body>
 </html>
