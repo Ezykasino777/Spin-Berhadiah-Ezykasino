@@ -3,144 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prediksi Bola</title>
+    <title>Football Live Scores</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('https://i.ibb.co/RpYRhmx/Sepak-Bola.jpg'); /* URL gambar background */
-            background-size: cover; /* Menyesuaikan ukuran gambar dengan layar */
-            background-position: center; /* Posisi gambar di tengah */
-            background-repeat: no-repeat; /* Tidak mengulang gambar */
-            background-attachment: fixed; /* Background tetap saat di-scroll */
+            background-color: #f4f4f4;
         }
+
         header {
-            background-color: rgba(44, 62, 80, 0.8); /* Transparansi untuk header */
+            background-color: #2c3e50;
             color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .advertisement {
+            background-color: #f9f9f9;
             padding: 1rem;
             text-align: center;
+            border-bottom: 1px solid #ddd;
         }
-        .container {
+
+        .menu {
+            display: flex;
+            justify-content: space-around;
+            background-color: #34495e;
+            padding: 1rem 0;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .content {
             max-width: 800px;
             margin: 2rem auto;
-            background: rgba(255, 255, 255, 0.9); /* Transparansi untuk container */
-            padding: 1.5rem;
+            padding: 1rem;
+            background: white;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
+
+        .section-title {
+            font-size: 1.2rem;
+            color: #34495e;
+            margin-bottom: 0.5rem;
+        }
+
         .match {
             margin-bottom: 1rem;
             padding: 1rem;
             border: 1px solid #ddd;
             border-radius: 8px;
-            background-color: rgba(249, 249, 249, 0.9); /* Transparansi untuk kotak pertandingan */
-            text-align: center;
+            background-color: #f9f9f9;
         }
-        .team {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .team-logos {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
+
+        .match-header {
+            font-weight: bold;
+            color: #7f8c8d;
             margin-bottom: 0.5rem;
         }
-        .logo {
-            width: 50px;
-            height: 50px;
+
+        .match-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .team span {
+
+        .team {
             text-align: center;
-            width: 60px;
         }
-        .predict-btn {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            cursor: pointer;
+
+        .team span {
+            display: block;
+            font-weight: bold;
             margin-top: 0.5rem;
         }
-        .predict-btn:hover {
-            background-color: #2980b9;
-        }
-        .prediction {
-            margin-top: 1rem;
+
+        .score {
+            font-size: 1.5rem;
             font-weight: bold;
         }
-        .statistics {
-            margin-top: 1rem;
-            text-align: left;
-            font-size: 0.9rem;
-        }
-        .statistics p {
-            margin: 0.5rem 0;
+
+        .status {
+            text-align: center;
+            color: #3498db;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Prediksi Bola</h1>
+        <h1>Football Live Scores</h1>
+        <p>Latest Football Results, EPL, LaLiga, Champions League</p>
     </header>
-    <div class="container">
-        <div class="match">
-            <div class="team-logos">
-                <div class="team">
-                    <img src="https://i.ibb.co/VScrNGP/MU.jpg" alt="Logo Manchester United" class="logo">
-                    <span>Manchester United</span>
-                </div>
-                <div class="team">
-                    <img src="https://i.ibb.co/hK3L6d1/LIVERPOLL.jpg" alt="Logo Liverpool" class="logo">
-                    <span>Liverpool</span>
+
+    <div class="advertisement">Advertisement</div>
+
+    <div class="menu">
+        <a href="#scores">Scores</a>
+        <a href="#news">News</a>
+        <a href="#login">Login</a>
+    </div>
+
+    <div class="content">
+        <div class="section">
+            <h2 class="section-title">ENGLAND : Premier League</h2>
+            <div class="match">
+                <div class="match-header">Live Standings</div>
+                <div class="status">LIVE: 82'</div>
+                <div class="match-details">
+                    <div class="team">
+                        <span>Chelsea</span>
+                    </div>
+                    <div class="score">3 - 1</div>
+                    <div class="team">
+                        <span>Wolves</span>
+                    </div>
                 </div>
             </div>
-            <button class="predict-btn" onclick="predictResult('match1')">Prediksi</button>
-            <p class="prediction" id="match1-prediction"></p>
-            <div class="statistics" id="match1-statistics"></div>
         </div>
 
-        <div class="match">
-            <div class="team-logos">
-                <div class="team">
-                    <img src="https://i.ibb.co/1T5np8p/BARCA.png" alt="Logo Barcelona" class="logo">
-                    <span>Barcelona</span>
-                </div>
-                <div class="team">
-                    <img src="https://i.ibb.co/zbK0qTH/Madrid.jpg" alt="Logo Real Madrid" class="logo">
-                    <span>Real Madrid</span>
+        <div class="section">
+            <h2 class="section-title">EUROPE : Europa League - League Phase</h2>
+            <div class="match">
+                <div class="match-header">Standings</div>
+                <div class="status">Upcoming: 22:30</div>
+                <div class="match-details">
+                    <div class="team">
+                        <span>Galatasaray</span>
+                    </div>
+                    <div class="score">-</div>
+                    <div class="team">
+                        <span>Dyn. Kyiv</span>
+                    </div>
                 </div>
             </div>
-            <button class="predict-btn" onclick="predictResult('match2')">Prediksi</button>
-            <p class="prediction" id="match2-prediction"></p>
-            <div class="statistics" id="match2-statistics"></div>
         </div>
 
-        <div class="match">
-            <div class="team-logos">
-                <div class="team">
-                    <img src="https://i.ibb.co/G59vJsX/MUCHEN.png" alt="Logo Bayern Munich" class="logo">
-                    <span>Bayern Munich</span>
-                </div>
-                <div class="team">
-                    <img src="https://i.ibb.co/7RFDBGw/PSG.png" alt="Logo PSG" class="logo">
-                    <span>PSG</span>
+        <div class="section">
+            <h2 class="section-title">ITALY : Serie A</h2>
+            <div class="match">
+                <div class="match-header">Finished</div>
+                <div class="status">Final</div>
+                <div class="match-details">
+                    <div class="team">
+                        <span>Como</span>
+                    </div>
+                    <div class="score">4 - 1</div>
+                    <div class="team">
+                        <span>Udinese</span>
+                    </div>
                 </div>
             </div>
-            <button class="predict-btn" onclick="predictResult('match3')">Prediksi</button>
-            <p class="prediction" id="match3-prediction"></p>
-            <div class="statistics" id="match3-statistics"></div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">SPAIN : LaLiga</h2>
+            <div class="match">
+                <div class="match-header">Live Standings</div>
+                <div class="status">LIVE: 83'</div>
+                <div class="match-details">
+                    <div class="team">
+                        <span>Villarreal</span>
+                    </div>
+                    <div class="score">4 - 0</div>
+                    <div class="team">
+                        <span>Mallorca</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <script>
-        function predictResult(matchId) {
-            const predictionText = `Hasil prediksi untuk ${matchId} adalah hasil seri!`;
-            document.getElementById(`${matchId}-prediction`).textContent = predictionText;
-        }
-    </script>
+
+    <div class="advertisement">Advertisement</div>
 </body>
 </html>
