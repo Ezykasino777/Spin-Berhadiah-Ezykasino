@@ -32,9 +32,16 @@
             z-index: 10;
         }
 
+        /* Updated menu styles */
         .menu {
             background-color: #34495e;
+            position: fixed; /* Change from sticky to fixed */
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 20; /* Ensure the menu stays on top of content */
             overflow: hidden;
+            box-shadow: 0 4px 2px -2px gray; /* Add shadow for visual effect */
         }
 
         .menu a {
@@ -63,6 +70,7 @@
             background: white;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 4rem; /* Ensure content is not hidden under the fixed menu */
         }
 
         .section-title {
