@@ -8,7 +8,7 @@
     body {
         text-align: center;
         font-family: Arial, sans-serif;
-        background-image: url('https://i.ibb.co/KcMzXTQN/Ezzzz.jpg'); /* Ganti dengan path gambar latar belakang */
+        background-image: url('https://i.ibb.co/KcMzXTQN/Ezzzz.jpg'); 
         background-size: cover;
         background-position: center;
         color: white;
@@ -27,7 +27,7 @@
         width: 100%;
         max-width: 400px;
         height: 250px;
-        background-image: url('https://i.ibb.co/KcMzXTQN/Ezzzz.jpg'); /* Ganti dengan path gambar latar belakang slot */
+        background-image: url('https://i.ibb.co/KcMzXTQN/Ezzzz.jpg'); 
         background-size: cover;
         background-position: center;
         border: 10px solid gold;
@@ -57,47 +57,47 @@
         width: 100%;
     }
     .input-box {
-        padding: 12px 20px; /* Padding disesuaikan agar lebih pas */
+        padding: 12px 20px; 
         font-size: 16px;
-        width: 100%; /* Menyesuaikan lebar dengan layar */
-        max-width: 350px; /* Lebar maksimal input */
+        width: 100%; 
+        max-width: 350px; 
         margin-bottom: 10px;
-        border: 2px solid #fff; /* Menambahkan border putih */
-        border-radius: 30px; /* Agar input serupa dengan tombol */
-        background-color: white; /* Latar belakang putih */
-        color: black; /* Warna teks hitam agar jelas terbaca */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Menambahkan bayangan untuk efek 3D */
-        transition: all 0.3s ease; /* Efek transisi saat fokus */
+        border: 2px solid #fff;
+        border-radius: 30px; 
+        background-color: white; 
+        color: black; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
     }
     .input-box:focus {
         outline: none;
         border-color: gold;
-        transform: translateY(-2px); /* Efek input terangkat saat fokus */
+        transform: translateY(-2px); 
     }
     .spin {
-        padding: 12px 25px; /* Menambahkan padding untuk tombol */
-        font-size: 18px; /* Menyesuaikan ukuran font */
-        background: linear-gradient(145deg, #ffcc00, #ff9900); /* Efek gradien untuk tombol */
+        padding: 12px 25px; 
+        font-size: 18px; 
+        background: linear-gradient(145deg, #ffcc00, #ff9900); 
         border: none;
         cursor: pointer;
-        border-radius: 30px; /* Tombol lebih melengkung */
+        border-radius: 30px; 
         width: 100%;
         max-width: 350px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Menambahkan bayangan untuk efek 3D */
-        transition: all 0.3s ease; /* Animasi transisi */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+        transition: all 0.3s ease;
     }
     .spin:hover {
-        background: linear-gradient(145deg, #ff9900, #ffcc00); /* Efek perubahan warna saat hover */
-        transform: translateY(-3px); /* Efek tombol terangkat saat hover */
+        background: linear-gradient(145deg, #ff9900, #ffcc00); 
+        transform: translateY(-3px); 
     }
     .spin:active {
-        transform: translateY(1px); /* Efek tombol tertekan saat klik */
+        transform: translateY(1px); 
     }
     .input-box, .spin {
         max-width: 350px;
     }
     .input-box {
-        width: 90%; /* Lebar input box sedikit lebih kecil dari tombol */
+        width: 90%; 
     }
     .notification {
         margin-top: 20px;
@@ -120,51 +120,39 @@
         <div class="notification" id="notification"></div>
     </div>
     
-    <script>
-        const hadiah = {
-            "LUCKY100": "img/apple.png",
-            "WINNER50": "img/diamond.png",
-            "JACKPOT": "img/jackpot.png",
-            "HADIAH1": "img/hadiah1.png",
-            "HADIAH2": "img/hadiah2.png",
-            "HADIAH3": "img/hadiah3.png",
-            "HADIAH4": "img/hadiah4.png",
-            "HADIAH5": "img/hadiah5.png",
-            "HADIAH6": "img/hadiah6.png",
-            "HADIAH7": "img/hadiah7.png",
-            "HADIAH8": "img/hadiah8.png",
-            "HADIAH9": "img/hadiah9.png",
-            "HADIAH10": "img/hadiah10.png",
-            "HADIAH11": "img/hadiah11.png",
-            "HADIAH12": "img/hadiah12.png",
-            "HADIAH13": "img/hadiah13.png",
-            "HADIAH14": "img/hadiah14.png",
-            "HADIAH15": "img/hadiah15.png"
+   <script>
+        const prizes = {
+            "ABC123": { prize: "Hadiah 1", image: "https://example.com/hadiah1.jpg" },
+            "XYZ789": { prize: "Hadiah 2", image: "https://example.com/hadiah2.jpg" },
+            "LMN456": { prize: "Hadiah 3", image: "https://example.com/hadiah3.jpg" },
+            "DEF321": { prize: "Hadiah 4", image: "https://example.com/hadiah4.jpg" },
+            // Menambahkan kode baru dengan hadiah yang sama
+            "GHI789": { prize: "Hadiah 1", image: "https://example.com/hadiah1.jpg" }, 
+            "JKL012": { prize: "Hadiah 1", image: "https://example.com/hadiah1.jpg" }
         };
 
-        function startSlot() {
-            let kode = document.getElementById("codeInput").value.toUpperCase(); // Ambil kode dan ubah ke huruf besar
-            let slotImage = document.getElementById("slotImage"); // Ambil elemen gambar slot
-            let notification = document.getElementById("notification"); // Ambil elemen untuk notifikasi
 
-            // Cek apakah kode ada di objek hadiah
+        function startSlot() {
+            let kode = document.getElementById("codeInput").value.toUpperCase(); 
+            let slotImage = document.getElementById("slotImage"); 
+            let notification = document.getElementById("notification"); 
+
             if (hadiah[kode]) {
-                notification.textContent = ""; // Kosongkan notifikasi jika kode valid
-                let result = hadiah[kode]; // Ambil gambar hadiah sesuai kode yang dimasukkan
+                notification.textContent = ""; 
+                let result = hadiah[kode]; 
                 
                 let images = ["img/apple.png", "img/banana.png", "img/cherry.png", "img/diamond.png", "img/jackpot.png", "img/money.png", "img/gift.png"];
                 let i = 0;
                 let interval = setInterval(() => {
-                    slotImage.src = images[Math.floor(Math.random() * images.length)]; // Pilih gambar secara acak
-                    if (++i > 20) { // Setelah 20 iterasi, berhenti
+                    slotImage.src = images[Math.floor(Math.random() * images.length)]; 
+                    if (++i > 20) { 
                         clearInterval(interval);
-                        slotImage.src = result; // Setel gambar hadiah sesuai kode yang dimasukkan
+                        slotImage.src = result; 
                     }
-                }, 100); // Interval 100ms untuk efek animasi
+                }, 100); 
             } else {
-                // Jika kode salah, tampilkan notifikasi kesalahan
                 notification.textContent = "Kode salah! Silakan coba lagi."; 
-                notification.style.color = "red"; // Ubah warna teks menjadi merah
+                notification.style.color = "red"; 
             }
         }
     </script>
