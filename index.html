@@ -35,6 +35,11 @@
         .controls { margin-top: 20px; }
         .input-box { padding: 10px; font-size: 18px; }
         .spin { padding: 10px 20px; font-size: 18px; background: gold; border: none; cursor: pointer; border-radius: 5px; }
+        .notification {
+            margin-top: 20px;
+            font-size: 18px;
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -48,55 +53,56 @@
             <input type="text" id="codeInput" class="input-box" placeholder="Masukkan kode">
             <button class="spin" onclick="startSlot()">Spin</button>
         </div>
+        <div class="notification" id="notification"></div>
     </div>
     
     <script>
         const hadiah = {
-    "LUCKY100": "img/apple.png",
-    "WINNER50": "img/diamond.png",
-    "JACKPOT": "img/jackpot.png",
-    "HADIAH1": "img/hadiah1.png",
-    "HADIAH2": "img/hadiah2.png",
-    "HADIAH3": "img/hadiah3.png",
-    "HADIAH4": "img/hadiah4.png",
-    "HADIAH5": "img/hadiah5.png",
-    "HADIAH6": "img/hadiah6.png",
-    "HADIAH7": "img/hadiah7.png",
-    "HADIAH8": "img/hadiah8.png",
-    "HADIAH9": "img/hadiah9.png",
-    "HADIAH10": "img/hadiah10.png",
-    "HADIAH11": "img/hadiah11.png",
-    "HADIAH12": "img/hadiah12.png",
-    "HADIAH13": "img/hadiah13.png",
-    "HADIAH14": "img/hadiah14.png",
-    "HADIAH15": "img/hadiah15.png"
-};
+            "LUCKY100": "img/apple.png",
+            "WINNER50": "img/diamond.png",
+            "JACKPOT": "img/jackpot.png",
+            "HADIAH1": "img/hadiah1.png",
+            "HADIAH2": "img/hadiah2.png",
+            "HADIAH3": "img/hadiah3.png",
+            "HADIAH4": "img/hadiah4.png",
+            "HADIAH5": "img/hadiah5.png",
+            "HADIAH6": "img/hadiah6.png",
+            "HADIAH7": "img/hadiah7.png",
+            "HADIAH8": "img/hadiah8.png",
+            "HADIAH9": "img/hadiah9.png",
+            "HADIAH10": "img/hadiah10.png",
+            "HADIAH11": "img/hadiah11.png",
+            "HADIAH12": "img/hadiah12.png",
+            "HADIAH13": "img/hadiah13.png",
+            "HADIAH14": "img/hadiah14.png",
+            "HADIAH15": "img/hadiah15.png"
+        };
 
-function startSlot() {
-    let kode = document.getElementById("codeInput").value.toUpperCase(); // Ambil kode dan ubah ke huruf besar
-    let slotImage = document.getElementById("slotImage"); // Ambil elemen gambar slot
-    let notification = document.getElementById("notification"); // Ambil elemen untuk notifikasi
+        function startSlot() {
+            let kode = document.getElementById("codeInput").value.toUpperCase(); // Ambil kode dan ubah ke huruf besar
+            let slotImage = document.getElementById("slotImage"); // Ambil elemen gambar slot
+            let notification = document.getElementById("notification"); // Ambil elemen untuk notifikasi
 
-    // Cek apakah kode ada di objek hadiah
-    if (hadiah[kode]) {
-        notification.textContent = ""; // Kosongkan notifikasi jika kode valid
-        let result = hadiah[kode]; // Ambil gambar hadiah sesuai kode yang dimasukkan
-        
-        let images = ["img/apple.png", "img/banana.png", "img/cherry.png", "img/diamond.png", "img/jackpot.png", "img/money.png", "img/gift.png"];
-        let i = 0;
-        let interval = setInterval(() => {
-            slotImage.src = images[Math.floor(Math.random() * images.length)]; // Pilih gambar secara acak
-            if (++i > 20) { // Setelah 20 iterasi, berhenti
-                clearInterval(interval);
-                slotImage.src = result; // Setel gambar hadiah sesuai kode yang dimasukkan
+            // Cek apakah kode ada di objek hadiah
+            if (hadiah[kode]) {
+                notification.textContent = ""; // Kosongkan notifikasi jika kode valid
+                let result = hadiah[kode]; // Ambil gambar hadiah sesuai kode yang dimasukkan
+                
+                let images = ["img/apple.png", "img/banana.png", "img/cherry.png", "img/diamond.png", "img/jackpot.png", "img/money.png", "img/gift.png"];
+                let i = 0;
+                let interval = setInterval(() => {
+                    slotImage.src = images[Math.floor(Math.random() * images.length)]; // Pilih gambar secara acak
+                    if (++i > 20) { // Setelah 20 iterasi, berhenti
+                        clearInterval(interval);
+                        slotImage.src = result; // Setel gambar hadiah sesuai kode yang dimasukkan
+                    }
+                }, 100); // Interval 100ms untuk efek animasi
+            } else {
+                // Jika kode salah, tampilkan notifikasi kesalahan
+                notification.textContent = "Kode salah! Silakan coba lagi."; 
+                notification.style.color = "red"; // Ubah warna teks menjadi merah
             }
-        }, 100); // Interval 100ms untuk efek animasi
-    } else {
-        // Jika kode salah, tampilkan notifikasi kesalahan
-        notification.textContent = "Kode salah! Silakan coba lagi."; 
-        notification.style.color = "red"; // Ubah warna teks menjadi merah
-    }
-}
+        }
     </script>
 </body>
 </html>
