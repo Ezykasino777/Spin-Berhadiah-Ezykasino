@@ -57,19 +57,22 @@
         width: 100%;
     }
     .input-box {
-        padding: 10px;
+        padding: 12px 20px; /* Padding disesuaikan agar lebih pas */
         font-size: 16px;
         width: 100%;
         max-width: 350px;
         margin-bottom: 10px;
         border: none;
-        border-radius: 5px;
-        background-color: rgba(255, 255, 255, 0.3); /* Agar input lebih stylish */
+        border-radius: 30px; /* Agar input serupa dengan tombol */
+        background: linear-gradient(145deg, #ffcc00, #ff9900); /* Efek gradien */
         color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Menambahkan bayangan untuk efek 3D */
+        transition: all 0.3s ease; /* Efek transisi saat fokus */
     }
     .input-box:focus {
         outline: none;
         border-color: gold;
+        transform: translateY(-2px); /* Efek input terangkat saat fokus */
     }
     .spin {
         padding: 12px 25px; /* Menambahkan padding untuk tombol */
