@@ -15,9 +15,9 @@
             color: white;
         }
         table {
-            width: 80%; /* Mengurangi lebar tabel */
-            max-width: 500px; /* Ukuran maksimum tabel */
-            margin: 50px auto 20px auto; /* Menaikkan posisi tabel dan memberi jarak di bawah */
+            width: auto; /* Lebar otomatis berdasarkan ukuran gambar */
+            max-width: 80%; /* Maksimal 80% dari lebar layar */
+            margin: 50px auto 20px auto;
             border-collapse: collapse;
             background: rgba(0, 0, 0, 0.5);
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -25,7 +25,7 @@
         }
         th, td {
             border: 1px solid yellow;
-            padding: 8px; /* Mengurangi padding untuk tabel lebih rapat */
+            padding: 8px;
             text-align: center;
         }
         th {
@@ -93,5 +93,18 @@
             <td>0</td>
         </tr>
     </table>
+
+    <script>
+        window.onload = function() {
+            var bgImage = new Image();
+            bgImage.src = 'https://i.ibb.co/MyVDxgkn/WA-START.webp';
+            bgImage.onload = function() {
+                // Mengatur lebar tabel agar sesuai dengan lebar gambar latar belakang
+                var table = document.querySelector('table');
+                var bgWidth = bgImage.width;
+                table.style.width = bgWidth + 'px';
+            };
+        };
+    </script>
 </body>
 </html>
