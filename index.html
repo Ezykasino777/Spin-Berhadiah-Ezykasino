@@ -5,35 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Balapan Turnover Ezykasino</title>
     <style>
-        /* Background tetap dengan ukuran aslinya */
+        /* Background tetap sesuai ukuran asli dan di tengah */
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 0;
             padding: 0;
             background: url('https://i.ibb.co/MyVDxgkn/WA-START.webp') no-repeat center center;
-            background-size: contain; /* Background akan mengikuti ukuran aslinya */
+            background-size: contain; /* Ukuran background mengikuti ukuran aslinya */
             background-attachment: fixed;
             color: white;
-            height: 100vh; /* Pastikan body mengambil 100% dari tinggi layar */
+            height: 100vh; /* Menyusun body untuk mengambil seluruh tinggi layar */
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        /* Kontainer untuk menempatkan tabel */
+        /* Kontainer dengan latar belakang transparan untuk tabel */
         .table-wrapper {
-            background: rgba(0, 0, 0, 0.5); /* Latar belakang transparan untuk tabel */
-            width: 80%; /* Lebar kontainer menyesuaikan 80% lebar layar */
-            max-width: 1000px; /* Maksimum lebar kontainer agar tetap proporsional */
+            background: rgba(0, 0, 0, 0.5); /* Latar belakang transparan */
+            width: 80%; /* Lebar kontainer menyesuaikan 80% dari lebar layar */
+            max-width: 1000px; /* Membatasi lebar maksimum kontainer */
             padding: 20px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             overflow-x: auto;
+            /* Membatasi lebar kontainer agar tidak keluar dari halaman */
+            position: relative;
+            z-index: 1;
         }
 
+        /* Tabel yang berada di dalam kontainer */
         table {
-            width: 100%; /* Tabel menyesuaikan dengan lebar kontainer */
+            width: 100%; /* Tabel menyesuaikan lebar kontainer */
             border-collapse: collapse;
             color: yellow;
         }
@@ -53,6 +57,7 @@
             margin: 20px 0;
             color: yellow;
         }
+
     </style>
 </head>
 <body>
