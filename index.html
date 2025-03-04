@@ -8,25 +8,31 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
+            margin: 0;
+            padding: 0;
             background: url('https://i.ibb.co/MyVDxgkn/WA-START.webp') no-repeat center center fixed;
-            background-size: cover;
+            background-size: contain; /* Agar background tetap sesuai dengan ukuran gambar */
             background-position: center;
             background-attachment: fixed;
             color: white;
-            margin: 0;
-            padding: 0;
         }
+
         .container {
             width: 100%;
             max-width: 1200px; /* Membatasi lebar kontainer agar tetap di tengah */
             margin: 0 auto;
             padding: 20px;
         }
+
         .table-wrapper {
-            overflow-x: auto; /* Menambahkan scroll horizontal jika tabel lebih lebar dari kontainer */
+            width: 100%; /* Membuat wrapper mengikuti ukuran kontainer */
+            max-width: 100%; /* Pastikan tabel tidak lebih besar dari kontainer */
+            margin: 0 auto;
+            overflow-x: auto; /* Agar tabel bisa digulir horizontal jika lebar tabel lebih dari layar */
         }
+
         table {
-            width: 100%; /* Membuat tabel mengisi seluruh lebar kontainer */
+            width: 100%; /* Tabel mengisi lebar kontainer */
             border-collapse: collapse;
             background: rgba(0, 0, 0, 0.5);
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -40,6 +46,10 @@
         th {
             background: black;
             color: yellow;
+        }
+
+        h1 {
+            margin: 20px 0;
         }
     </style>
 </head>
