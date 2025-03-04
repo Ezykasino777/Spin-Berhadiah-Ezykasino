@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Balapan Turnover Ezykasino</title>
     <style>
-        /* Background tetap sesuai ukuran asli dan di tengah */
+        /* Background tetap sesuai ukuran asli */
         body {
             font-family: Arial, sans-serif;
             text-align: center;
@@ -15,24 +15,22 @@
             background-size: contain; /* Ukuran background mengikuti ukuran aslinya */
             background-attachment: fixed;
             color: white;
-            height: 100vh; /* Menyusun body untuk mengambil seluruh tinggi layar */
+            height: 100vh; /* Menggunakan tinggi penuh layar */
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        /* Kontainer dengan latar belakang transparan untuk tabel */
+        /* Kontainer untuk tabel, agar sesuai dengan lebar background */
         .table-wrapper {
             background: rgba(0, 0, 0, 0.5); /* Latar belakang transparan */
-            width: 80%; /* Lebar kontainer menyesuaikan 80% dari lebar layar */
-            max-width: 1000px; /* Membatasi lebar maksimum kontainer */
+            max-width: 960px; /* Lebar kontainer sesuai dengan lebar gambar latar belakang */
+            width: 100%; /* Kontainer mengisi lebar gambar */
             padding: 20px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
+            box-sizing: border-box; /* Memastikan padding dihitung dalam ukuran total */
             overflow-x: auto;
-            /* Membatasi lebar kontainer agar tidak keluar dari halaman */
-            position: relative;
-            z-index: 1;
         }
 
         /* Tabel yang berada di dalam kontainer */
