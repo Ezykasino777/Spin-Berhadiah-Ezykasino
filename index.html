@@ -11,41 +11,48 @@
             background: url('https://i.ibb.co/MyVDxgkn/WA-START.webp') no-repeat center center fixed;
             background-size: cover;
             color: white;
+            margin: 0;
         }
-
         table {
-            width: 100%; /* Lebar tabel diubah menjadi 100% */
-            max-width: 500px;
-            margin: 50px auto 20px auto;
+            width: 90%; /* Ukuran tabel mengikuti layar */
+            max-width: 500px; /* Ukuran maksimum tabel */
+            margin: 50px auto 20px auto; /* Menaikkan posisi tabel dan memberi jarak di bawah */
             border-collapse: collapse;
             background: rgba(0, 0, 0, 0.5);
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             color: yellow;
         }
-
         th, td {
             border: 1px solid yellow;
-            padding: 8px;
+            padding: 8px; /* Mengurangi padding untuk tabel lebih rapat */
             text-align: center;
         }
-
         th {
             background: black;
             color: yellow;
         }
 
-        /* Media query untuk tampilan di perangkat dengan layar lebih besar (desktop) */
-        @media (min-width: 768px) {
+        /* Media Query untuk tampilan lebih kecil (mobile) */
+        @media (max-width: 768px) {
             table {
-                max-width: 100%; /* Tabel akan lebih lebar di desktop */
+                width: 95%; /* Lebar tabel sedikit lebih besar pada perangkat kecil */
+            }
+            th, td {
+                font-size: 14px; /* Ukuran font lebih kecil pada perangkat kecil */
+                padding: 6px; /* Padding lebih kecil untuk perangkat kecil */
+            }
+            h1 {
+                font-size: 24px; /* Ukuran judul sedikit lebih kecil di mobile */
             }
         }
 
-        /* Media query untuk tampilan di perangkat mobile */
-        @media (max-width: 767px) {
+        /* Media Query untuk tampilan lebih besar (desktop) */
+        @media (min-width: 769px) {
+            h1 {
+                font-size: 30px; /* Ukuran judul lebih besar di desktop */
+            }
             table {
-                max-width: 100%; /* Lebar tabel menyesuaikan ukuran layar */
-                font-size: 14px; /* Mengurangi ukuran font di mobile */
+                width: 80%; /* Lebar tabel sedikit lebih kecil di desktop */
             }
         }
     </style>
