@@ -9,22 +9,24 @@
             font-family: Arial, sans-serif;
             text-align: center;
             background: url('https://i.ibb.co/MyVDxgkn/WA-START.webp') no-repeat center center fixed;
-            background-size: contain; /* Menjaga ukuran asli gambar */
-            background-position: center; /* Menjaga gambar tetap di tengah */
+            background-size: cover;
+            background-position: center;
             background-attachment: fixed;
             color: white;
             margin: 0;
             padding: 0;
         }
         .container {
-            width: 100%; /* Menggunakan lebar penuh layar */
-            max-width: 100%; /* Menghindari pembatasan lebar maksimum */
+            width: 100%;
+            max-width: 1200px; /* Membatasi lebar kontainer agar tetap di tengah */
             margin: 0 auto;
+            padding: 20px;
+        }
+        .table-wrapper {
+            overflow-x: auto; /* Menambahkan scroll horizontal jika tabel lebih lebar dari kontainer */
         }
         table {
-            width: 80%; /* Menyesuaikan lebar tabel dengan persentase lebar layar */
-            max-width: 80%; /* Maksimum 80% dari lebar layar */
-            margin: 50px auto 20px auto; /* Menaikkan posisi tabel dan memberi jarak di bawah */
+            width: 100%; /* Membuat tabel mengisi seluruh lebar kontainer */
             border-collapse: collapse;
             background: rgba(0, 0, 0, 0.5);
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -44,63 +46,65 @@
 <body>
     <div class="container">
         <h1>Hasil Saat ini 10 Turnover Tertinggi</h1>
-        <table>
-            <tr>
-                <th>Posisi</th>
-                <th>Userid</th>
-                <th>Turnover(hari)</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>yuna****</td>
-                <td>0</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>par9***</td>
-                <td>0</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>ibn****</td>
-                <td>0</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>mons****</td>
-                <td>0</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>reb****</td>
-                <td>0</td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>abuw****</td>
-                <td>0</td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>marl***</td>
-                <td>0</td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td>nyg****</td>
-                <td>0</td>
-            </tr>
-            <tr>
-                <td>9</td>
-                <td>Tuka5***</td>
-                <td>0</td>
-            </tr>
-            <tr>
-                <td>10</td>
-                <td>Bram***</td>
-                <td>0</td>
-            </tr>
-        </table>
+        <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Posisi</th>
+                    <th>Userid</th>
+                    <th>Turnover(hari)</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>yuna****</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>par9***</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>ibn****</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>mons****</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>reb****</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>abuw****</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>marl***</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>nyg****</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Tuka5***</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Bram***</td>
+                    <td>0</td>
+                </tr>
+            </table>
+        </div>
     </div>
 </body>
 </html>
