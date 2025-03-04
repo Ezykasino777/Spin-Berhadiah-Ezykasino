@@ -9,29 +9,25 @@
             font-family: Arial, sans-serif;
             text-align: center;
             background: url('https://i.ibb.co/MyVDxgkn/WA-START.webp') no-repeat center center fixed;
-            background-size: contain;
-            background-position: center top;
-            background-color: black;
+            background-size: cover; /* Memastikan background menyesuaikan layar tanpa melebar */
+            background-attachment: fixed; /* Mengunci background agar tidak bergerak saat scroll */
             color: white;
             margin: 0;
             padding: 0;
-        }
-        h1 {
-            margin-top: 20px;
-            font-size: 24px;
+            height: 100vh; /* Memastikan body memenuhi tinggi layar */
         }
         table {
-            width: 80%;
-            max-width: 500px; /* Ukuran tabel tetap seperti sebelumnya */
-            margin: 50px auto 20px auto;
+            width: 100%; /* Menyesuaikan lebar tabel dengan lebar layar */
+            max-width: 600px; /* Ukuran maksimum tabel */
+            margin: 50px auto 20px auto; /* Menaikkan posisi tabel dan memberi jarak di bawah */
             border-collapse: collapse;
-            background: rgba(0, 0, 0, 0.7);
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.5); /* Latar belakang tabel agar lebih jelas */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             color: yellow;
         }
         th, td {
             border: 1px solid yellow;
-            padding: 8px; /* Padding tabel tetap seperti sebelumnya */
+            padding: 8px; /* Mengurangi padding untuk tabel lebih rapat */
             text-align: center;
         }
         th {
@@ -48,16 +44,56 @@
             <th>Userid</th>
             <th>Turnover(hari)</th>
         </tr>
-        <tr><td>1</td><td>yuna****</td><td>0</td></tr>
-        <tr><td>2</td><td>par9***</td><td>0</td></tr>
-        <tr><td>3</td><td>ibn****</td><td>0</td></tr>
-        <tr><td>4</td><td>mons****</td><td>0</td></tr>
-        <tr><td>5</td><td>reb****</td><td>0</td></tr>
-        <tr><td>6</td><td>abuw****</td><td>0</td></tr>
-        <tr><td>7</td><td>marl***</td><td>0</td></tr>
-        <tr><td>8</td><td>nyg****</td><td>0</td></tr>
-        <tr><td>9</td><td>Tuka5***</td><td>0</td></tr>
-        <tr><td>10</td><td>Bram***</td><td>0</td></tr>
+        <tr>
+            <td>1</td>
+            <td>yuna****</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>par9***</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>ibn****</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>mons****</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>reb****</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>abuw****</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>marl***</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>nyg****</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Tuka5***</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>Bram***</td>
+            <td>0</td>
+        </tr>
     </table>
 </body>
 </html>
