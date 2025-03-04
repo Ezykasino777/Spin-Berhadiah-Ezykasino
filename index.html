@@ -3,144 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wheel Spin Game</title>
+    <title>Pole Position Balapan</title>
     <style>
-    body {
-        text-align: center;
-        font-family: Arial, sans-serif;
-        background-image: url('https://i.ibb.co/bgL2DQBT/Batik.webp'); /* Ganti dengan path gambar latar belakang */
-        background-size: cover;
-        background-position: center;
-        color: white;
-        margin: 0;
-        padding: 0;
-    }
-    .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        padding: 10px;
-    }
-    .slot-machine {
-        width: 100%;
-        max-width: 400px;
-        height: 250px;
-        background-image: url('https://i.ibb.co/bgL2DQBT/Batik.webp'); /* Ganti dengan path gambar latar belakang slot */
-        background-size: cover;
-        background-position: center;
-        border: 10px solid gold;
-        border-radius: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0px 0px 20px gold;
-        margin-bottom: 20px;
-    }
-    .slot {
-        width: 90%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: black;
-        border-radius: 10px;
-    }
-    .slot img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-    .controls {
-        margin-top: 20px;
-        width: 100%;
-    }
-    .input-box {
-        padding: 12px 20px; /* Padding disesuaikan agar lebih pas */
-        font-size: 16px;
-        width: 100%; /* Menyesuaikan lebar dengan layar */
-        max-width: 350px; /* Lebar maksimal input */
-        margin-bottom: 10px;
-        border: 2px solid #fff; /* Menambahkan border putih */
-        border-radius: 30px; /* Agar input serupa dengan tombol */
-        background-color: white; /* Latar belakang putih */
-        color: black; /* Warna teks hitam agar jelas terbaca */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Menambahkan bayangan untuk efek 3D */
-        transition: all 0.3s ease; /* Efek transisi saat fokus */
-    }
-    .input-box:focus {
-        outline: none;
-        border-color: gold;
-        transform: translateY(-2px); /* Efek input terangkat saat fokus */
-    }
-    .spin {
-        padding: 12px 25px; /* Menambahkan padding untuk tombol */
-        font-size: 18px; /* Menyesuaikan ukuran font */
-        background: linear-gradient(145deg, #ffcc00, #ff9900); /* Efek gradien untuk tombol */
-        border: none;
-        cursor: pointer;
-        border-radius: 30px; /* Tombol lebih melengkung */
-        width: 100%;
-        max-width: 350px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Menambahkan bayangan untuk efek 3D */
-        transition: all 0.3s ease; /* Animasi transisi */
-    }
-    .spin:hover {
-        background: linear-gradient(145deg, #ff9900, #ffcc00); /* Efek perubahan warna saat hover */
-        transform: translateY(-3px); /* Efek tombol terangkat saat hover */
-    }
-    .spin:active {
-        transform: translateY(1px); /* Efek tombol tertekan saat klik */
-    }
-    .input-box, .spin {
-        max-width: 350px;
-    }
-    .input-box {
-        width: 90%; /* Lebar input box sedikit lebih kecil dari tombol */
-    }
-    .notification {
-        margin-top: 20px;
-        font-size: 18px;
-        color: red;
-    }
-</style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background: #333;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="slot-machine">
-            <div class="slot">
-                <img id="prize-image" src="https://i.ibb.co/HTHxLYXd/images-1.jpg" alt="Hadiah" />
-            </div>
-        </div>
-        <div class="controls">
-            <input type="text" id="code-input" class="input-box" placeholder="Masukkan kode" />
-            <button class="spin" onclick="spinWheel()">Spin</button>
-        </div>
-        <div id="result" class="notification"></div>
-    </div>
-
-    <script>
-        // Hadiah berdasarkan kode yang dimasukkan
-        const prizes = {
-            "ABC123": { prize: "Hadiah 1", image: "https://i.ibb.co/v6ktRsFZ/download.jpg" },
-            "XYZ789": { prize: "Hadiah 2", image: "https://i.ibb.co/LdhDXvsK/images.jpg" },
-            "LMN456": { prize: "Hadiah 3", image: "https://i.ibb.co/FPm8xLs/download-1.jpg" },
-            "DEF321": { prize: "Hadiah 4", image: "https://i.ibb.co/fV5yVd1h/download-2.jpg" }
-        };
-
-        function spinWheel() {
-            const code = document.getElementById("code-input").value.trim().toUpperCase();
-            const prize = prizes[code]; // Cek hadiah berdasarkan kode yang dimasukkan
-
-            if (prize) {
-                document.getElementById("result").innerText = `Selamat, Anda mendapatkan ${prize.prize}!`;
-                document.getElementById("prize-image").src = prize.image; // Menampilkan gambar hadiah
-            } else {
-                document.getElementById("result").innerText = "Kode tidak valid, coba lagi!";
-                document.getElementById("prize-image").src = "https://i.ibb.co/v6ktRsFZ/download.jpg"; // Gambar default
-            }
-        }
-    </script>
+    <h1>Hasil Kualifikasi - Pole Position</h1>
+    <table>
+        <tr>
+            <th>Posisi</th>
+            <th>Pembalap</th>
+            <th>Waktu (Detik)</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Max Verstappen</td>
+            <td>1:32.345</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Lewis Hamilton</td>
+            <td>1:32.678</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Charles Leclerc</td>
+            <td>1:32.789</td>
+        </tr>
+    </table>
 </body>
 </html>
