@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Balapan Turnover Ezykasino</title>
     <style>
-        /* Pengaturan tampilan dasar */
         body {
             font-family: Arial, sans-serif;
             text-align: center;
@@ -13,49 +12,23 @@
             background-size: cover;
             color: white;
         }
-
         table {
-            width: 100%;
-            max-width: 500px;
-            margin: 50px auto 20px auto;
+            width: 80%; /* Mengurangi lebar tabel */
+            max-width: 500px; /* Ukuran maksimum tabel */
+            margin: 50px auto 20px auto; /* Menaikkan posisi tabel dan memberi jarak di bawah */
             border-collapse: collapse;
             background: rgba(0, 0, 0, 0.5);
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             color: yellow;
         }
-
         th, td {
             border: 1px solid yellow;
-            padding: 8px;
+            padding: 8px; /* Mengurangi padding untuk tabel lebih rapat */
             text-align: center;
         }
-
         th {
             background: black;
             color: yellow;
-        }
-
-        /* Menyembunyikan tampilan desktop dan hanya menampilkan tampilan mobile */
-        @media only screen and (min-width: 769px) {
-            body {
-                display: none; /* Menyembunyikan seluruh konten di desktop */
-            }
-        }
-
-        /* Tampilan mobile */
-        @media only screen and (max-width: 768px) {
-            body {
-                display: block; /* Menampilkan konten pada mobile */
-            }
-
-            table {
-                width: 100%;
-                max-width: 100%;
-                margin: 20px 0;
-            }
-            th, td {
-                padding: 10px;
-            }
         }
     </style>
 </head>
