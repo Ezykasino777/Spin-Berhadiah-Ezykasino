@@ -11,26 +11,30 @@
             background: url('https://i.ibb.co/MyVDxgkn/WA-START.webp') no-repeat center center fixed;
             background-size: cover;
             color: white;
-            max-width: 480px; /* Memaksa lebar maksimum untuk tampilan mobile */
-            margin: auto; /* Menjaga agar tetap berada di tengah */
+            max-width: 480px; /* Memaksa tampilan tetap mobile */
+            margin: auto;
+            padding-top: 20px;
         }
         h1 {
-            font-size: 20px; /* Mengecilkan ukuran judul agar lebih pas di mobile */
+            font-size: 18px;
             padding: 10px;
+            margin-bottom: 10px;
         }
         table {
-            width: 95%; /* Memanfaatkan lebih banyak ruang */
-            max-width: 400px; /* Membatasi ukuran tabel agar tetap mobile-friendly */
-            margin: 20px auto;
+            width: 80%; /* Mengecilkan tabel */
+            max-width: 300px; /* Batas maksimal tabel */
+            margin: 30px auto; /* Pusatkan tabel dengan jarak dari atas */
             border-collapse: collapse;
             background: rgba(0, 0, 0, 0.7);
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
             color: yellow;
+            border-radius: 10px;
+            overflow: hidden;
         }
         th, td {
             border: 1px solid yellow;
-            padding: 6px;
-            font-size: 14px; /* Ukuran teks lebih kecil agar tidak terlalu besar di layar kecil */
+            padding: 5px;
+            font-size: 12px;
             text-align: center;
         }
         th {
@@ -44,11 +48,12 @@
                 padding: 10px;
             }
             table {
-                width: 100%;
+                width: 90%;
+                max-width: 280px;
             }
             th, td {
-                padding: 5px;
-                font-size: 12px;
+                padding: 4px;
+                font-size: 11px;
             }
         }
     </style>
