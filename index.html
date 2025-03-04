@@ -35,7 +35,14 @@
             color: yellow;
         }
 
-        /* Mengatur tampilan untuk layar lebih kecil (mobile) */
+        /* Menyembunyikan tampilan desktop dan hanya menampilkan mobile */
+        @media only screen and (min-width: 769px) {
+            body {
+                display: none; /* Menyembunyikan seluruh konten untuk desktop */
+            }
+        }
+
+        /* Tampilan untuk mobile */
         @media only screen and (max-width: 768px) {
             body {
                 background-size: cover;
@@ -48,19 +55,6 @@
             }
             th, td {
                 padding: 10px; /* Menambah jarak di dalam tabel */
-            }
-        }
-
-        /* Mengatur tampilan untuk desktop */
-        @media only screen and (min-width: 769px) {
-            body {
-                background-size: cover;
-                padding: 10px; /* Memberikan ruang */
-            }
-            table {
-                width: 100%;
-                max-width: 500px;
-                margin: 50px auto;
             }
         }
     </style>
