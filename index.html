@@ -12,23 +12,6 @@
             background-size: cover;
             color: white;
         }
-
-        h1 {
-            font-size: 3em;
-            font-weight: bold;
-            text-shadow: 
-                0 0 10px rgba(255, 255, 255, 0.7), 
-                0 0 20px rgba(255, 255, 255, 0.7);
-            color: #fff;
-            background: linear-gradient(45deg, #ff6a00, #ffcb00);
-            -webkit-background-clip: text;
-            background-clip: text;
-            line-height: 1.2;
-            padding: 20px 0;
-            text-transform: uppercase;
-            border-bottom: 5px solid #fff;
-        }
-
         table {
             width: 80%;
             max-width: 500px;
@@ -38,26 +21,15 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             color: yellow;
         }
-
         th, td {
             border: 1px solid yellow;
-            padding: 10px;
+            padding: 8px;
             text-align: center;
         }
-
         th {
-            font-size: 1.5em;
-            font-weight: bold;
-            background: #8B4513;
-            color: white;
-            text-shadow: 
-                0 0 10px rgba(255, 255, 255, 0.5), 
-                0 0 20px rgba(255, 255, 255, 0.5); /* Menambahkan efek cahaya putih */
-            letter-spacing: 1px;
-            padding: 15px;
-            border-bottom: 3px solid #fff;
+            background: black;
+            color: yellow;
         }
-
         .up {
             width: 0;
             height: 0;
@@ -67,7 +39,6 @@
             display: inline-block;
             margin-left: 5px;
         }
-
         .down {
             width: 0;
             height: 0;
@@ -77,6 +48,12 @@
             display: inline-block;
             margin-left: 5px;
         }
+        .number {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+            color: #ffcb00;
+        }
     </style>
 </head>
 <body>
@@ -85,83 +62,118 @@
         <tr>
             <th>Posisi</th>
             <th>Userid</th>
-            <th>Turnover</th>
+            <th>Turnover(hari)</th>
         </tr>
         <tr>
             <td>1 <span class="up"></span></td>
             <td>ONAN***</td>
-            <td>55,226,000</td>
+            <td class="number">55,226,<span id="dynamicNumber1">000</span></td>
         </tr>
         <tr>
             <td>2 <span class="up"></span></td>
             <td>CU**</td>
-            <td>24,938,400</td>
+            <td class="number">24,938,<span id="dynamicNumber2">400</span></td>
         </tr>
         <tr>
             <td>3 <span class="up"></span></td>
             <td>PATI********</td>
-            <td>17,685,200</td>
+            <td class="number">17,685,<span id="dynamicNumber3">200</span></td>
         </tr>
         <tr>
             <td>4 <span class="up"></span></td>
             <td>PAU*****</td>
-            <td>12,661,400</td>
+            <td class="number">12,661,<span id="dynamicNumber4">400</span></td>
         </tr>
         <tr>
             <td>5 <span class="up"></span></td>
             <td>VIT*****</td>
-            <td>11,042,400</td>
+            <td class="number">11,042,<span id="dynamicNumber5">400</span></td>
         </tr>
         <tr>
             <td>6 <span class="up"></span></td>
             <td>LAP******</td>
-            <td>10,718,000</td>
+            <td class="number">10,718,<span id="dynamicNumber6">000</span></td>
         </tr>
         <tr>
             <td>7 <span class="up"></span></td>
             <td>NYG****</td>
-            <td>10,529,000</td>
+            <td class="number">10,529,<span id="dynamicNumber7">000</span></td>
         </tr>
         <tr>
             <td>8 <span class="up"></span></td>
             <td>CAS****</td>
-            <td>9,937,700</td>
+            <td class="number">9,937,<span id="dynamicNumber8">700</span></td>
         </tr>
         <tr>
             <td>9 <span class="up"></span></td>
             <td>CAI******</td>
-            <td>8,901,400</td>
+            <td class="number">8,901,<span id="dynamicNumber9">400</span></td>
         </tr>
         <tr>
             <td>10 <span class="up"></span></td>
             <td>EZYS****</td>
-            <td>8,094,600</td>
+            <td class="number">8,094,<span id="dynamicNumber10">600</span></td>
         </tr>
         <tr>
             <td>11 <span class="up"></span></td>
             <td>DAN********</td>
-            <td>7,770,000</td>
+            <td class="number">7,770,<span id="dynamicNumber11">000</span></td>
         </tr>
         <tr>
             <td>12 <span class="up"></span></td>
             <td>RIS****</td>
-            <td>6,833,000</td>
+            <td class="number">6,833,<span id="dynamicNumber12">000</span></td>
         </tr>
         <tr>
             <td>13 <span class="up"></span></td>
             <td>LUM**</td>
-            <td>6,373,000</td>
+            <td class="number">6,373,<span id="dynamicNumber13">000</span></td>
         </tr>
         <tr>
             <td>14 <span class="up"></span></td>
             <td>TEM**</td>
-            <td>6,216,800</td>
+            <td class="number">6,216,<span id="dynamicNumber14">800</span></td>
         </tr>
         <tr>
             <td>15 <span class="up"></span></td>
             <td>AND*****</td>
-            <td>5,879,000</td>
+            <td class="number">5,879,<span id="dynamicNumber15">000</span></td>
         </tr>
     </table>
+
+    <script>
+        // Fungsi untuk memperbarui angka
+        function updateNumber(id) {
+            let numberElement = document.getElementById(id);
+            let number = 0;
+            function animateNumber() {
+                number++;
+                if (number > 999) {
+                    number = 0; // Kembali ke 0 setelah mencapai 999
+                }
+                let formattedNumber = number.toString().padStart(3, '0');
+                numberElement.textContent = formattedNumber;
+                setTimeout(animateNumber, 100); // Waktu pergerakan animasi
+            }
+            animateNumber();
+        }
+
+        // Menjalankan animasi untuk setiap angka
+        updateNumber("dynamicNumber1");
+        updateNumber("dynamicNumber2");
+        updateNumber("dynamicNumber3");
+        updateNumber("dynamicNumber4");
+        updateNumber("dynamicNumber5");
+        updateNumber("dynamicNumber6");
+        updateNumber("dynamicNumber7");
+        updateNumber("dynamicNumber8");
+        updateNumber("dynamicNumber9");
+        updateNumber("dynamicNumber10");
+        updateNumber("dynamicNumber11");
+        updateNumber("dynamicNumber12");
+        updateNumber("dynamicNumber13");
+        updateNumber("dynamicNumber14");
+        updateNumber("dynamicNumber15");
+    </script>
 </body>
 </html>
