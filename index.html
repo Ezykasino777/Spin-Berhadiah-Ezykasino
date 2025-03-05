@@ -142,20 +142,27 @@
     </table>
 
     <script>
+        // Fungsi untuk menghasilkan angka acak antara 0-999
+        function randomNumber() {
+            return Math.floor(Math.random() * 1000);
+        }
+
         // Fungsi untuk memperbarui angka
         function updateNumber(id) {
             let numberElement = document.getElementById(id);
-            let number = 0;
+            let currentNumber = randomNumber(); // Mulai dengan angka acak
+            let increment = Math.floor(Math.random() * 5) + 1; // Angka perubahan acak untuk pergerakan yang lebih alami
+            
             function animateNumber() {
-                number++;
-                if (number > 999) {
-                    number = 0; // Kembali ke 0 setelah mencapai 999
+                currentNumber += increment;
+                if (currentNumber > 999) {
+                    currentNumber = 0; // Kembali ke 0 setelah mencapai 999
                 }
-                let formattedNumber = number.toString().padStart(3, '0');
+                let formattedNumber = currentNumber.toString().padStart(3, '0');
                 numberElement.textContent = formattedNumber;
-                setTimeout(animateNumber, 100); // Waktu pergerakan animasi
             }
-            animateNumber();
+
+            setInterval(animateNumber, 30000); // Update setiap 30 detik
         }
 
         // Menjalankan animasi untuk setiap angka
