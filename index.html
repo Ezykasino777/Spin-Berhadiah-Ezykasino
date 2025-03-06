@@ -11,7 +11,6 @@
             background: url('https://i.ibb.co/5Xgxcbc0/images-1.webp') no-repeat center center fixed;
             background-size: cover;
             color: white;
-            overflow: auto; /* Mengganti overflow: hidden; dengan auto untuk memungkinkan scroll */
         }
 
         h1 {
@@ -39,13 +38,11 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             color: yellow;
         }
-
         th, td {
             border: 1px solid yellow;
             padding: 8px;
             text-align: center;
         }
-
         th {
             font-size: 1.5em;
             font-weight: bold;
@@ -58,7 +55,6 @@
             padding: 15px;
             border-bottom: 3px solid #fff;
         }
-
         .up {
             width: 0;
             height: 0;
@@ -68,7 +64,6 @@
             display: inline-block;
             margin-left: 5px;
         }
-
         .down {
             width: 0;
             height: 0;
@@ -78,7 +73,6 @@
             display: inline-block;
             margin-left: 5px;
         }
-
         .number {
             font-size: 1.2em;
             font-weight: bold;
@@ -100,7 +94,6 @@
                 transform: translateY(100vh);
             }
         }
-
     </style>
 </head>
 <body>
@@ -111,7 +104,81 @@
             <th>Userid</th>
             <th>Turnover</th>
         </tr>
-        <!-- Add table rows here, like in the original code -->
+        <tr>
+            <td>1 <span class="up"></span></td>
+            <td>JR1***</td>
+            <td class="number">80,489,<span id="dynamicNumber1">000</span></td>
+        </tr>
+        <tr>
+            <td>2 <span class="up"></span></td>
+            <td>AGU******</td>
+            <td class="number">61,058,<span id="dynamicNumber2">400</span></td>
+        </tr>
+        <tr>
+            <td>3 <span class="down"></span></td>
+            <td>ONA****</td>
+            <td class="number">55,226,<span id="dynamicNumber3">200</span></td>
+        </tr>
+        <tr>
+            <td>4 <span class="up"></span></td>
+            <td>DAU******</td>
+            <td class="number">55,195,<span id="dynamicNumber4">400</span></td>
+        </tr>
+        <tr>
+            <td>5 <span class="up"></span></td>
+            <td>210*****</td>
+            <td class="number">41,955,<span id="dynamicNumber5">400</span></td>
+        </tr>
+        <tr>
+            <td>6 <span class="down"></span></td>
+            <td>CUY*</td>
+            <td class="number">33,268,<span id="dynamicNumber6">000</span></td>
+        </tr>
+        <tr>
+            <td>7 <span class="up"></span></td>
+            <td>CAI******</td>
+            <td class="number">25,633,<span id="dynamicNumber7">000</span></td>
+        </tr>
+        <tr>
+            <td>8 <span class="down"></span></td>
+            <td>LAP******</td>
+            <td class="number">23,768,<span id="dynamicNumber8">700</span></td>
+        </tr>
+        <tr>
+            <td>9 <span class="up"></span></td>
+            <td>AND*****</td>
+            <td class="number">20,015,<span id="dynamicNumber9">400</span></td>
+        </tr>
+        <tr>
+            <td>10 <span class="up"></span></td>
+            <td>PAU*****</td>
+            <td class="number">17,766,<span id="dynamicNumber10">600</span></td>
+        </tr>
+        <tr>
+            <td>11 <span class="down"></span></td>
+            <td>PAT************</td>
+            <td class="number">17,685,<span id="dynamicNumber11">000</span></td>
+        </tr>
+        <tr>
+            <td>12 <span class="up"></span></td>
+            <td>PAK***</td>
+            <td class="number">13,376,<span id="dynamicNumber12">000</span></td>
+        </tr>
+        <tr>
+            <td>13 <span class="down"></span></td>
+            <td>VIT*****</td>
+            <td class="number">13,248,<span id="dynamicNumber13">000</span></td>
+        </tr>
+        <tr>
+            <td>14 <span class="up"></span></td>
+            <td>LUM***</td>
+            <td class="number">12,492,<span id="dynamicNumber14">800</span></td>
+        </tr>
+        <tr>
+            <td>15 <span class="up"></span></td>
+            <td>MON**</td>
+            <td class="number">12,114,<span id="dynamicNumber15">000</span></td>
+        </tr>
     </table>
 
     <script>
@@ -155,10 +222,11 @@
         updateNumber("dynamicNumber14");
         updateNumber("dynamicNumber15");
 
-        // Menambahkan efek salju
+        // Menambahkan efek salju dengan gambar lebih bervariasi
         const snowflakeImages = [
             'https://i.ibb.co/7tGfYBfB/aztec-1.png',
-            'https://i.ibb.co/sJ3S0ccb/x1000-1.png'
+            'https://i.ibb.co/sJ3S0ccb/x1000-1.png',
+            'https://i.ibb.co/ynqft2Sf/x100-1.png'
         ];
 
         function createSnowflake() {
@@ -174,8 +242,8 @@
             }, 10000);
         }
 
-        // Membuat efek salju setiap 300ms (kurang intens)
-        setInterval(createSnowflake, 300);
+        // Membuat efek salju setiap 500ms
+        setInterval(createSnowflake, 500);
     </script>
 </body>
 </html>
