@@ -239,4 +239,22 @@
         function createSnowflake() {
             const snowflake = document.createElement('img');
             snowflake.classList.add('snowflake');
-            const randomIndex = Math.floor(Math
+            const randomIndex = Math.floor(Math.random() * snowflakeImages.length);
+            snowflake.src = snowflakeImages[randomIndex];
+
+            const randomPosition = Math.floor(Math.random() * window.innerWidth);
+            snowflake.style.left = randomPosition + 'px';
+            
+            document.body.appendChild(snowflake);
+
+            // Hapus salju setelah animasi selesai
+            setTimeout(() => {
+                snowflake.remove();
+            }, 10000); // Hapus setelah 10 detik
+        }
+
+        // Membuat salju setiap 5 detik
+        setInterval(createSnowflake, 5000);
+    </script>
+</body>
+</html>
