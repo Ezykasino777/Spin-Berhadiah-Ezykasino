@@ -11,6 +11,7 @@
             background: url('https://i.ibb.co/5Xgxcbc0/images-1.webp') no-repeat center center fixed;
             background-size: cover;
             color: white;
+            overflow: hidden; /* Agar tidak ada scrollbar saat salju bergerak */
         }
 
         h1 {
@@ -222,19 +223,23 @@
         updateNumber("dynamicNumber14");
         updateNumber("dynamicNumber15");
 
-        // Menambahkan efek salju dengan gambar lebih bervariasi
+        // Menambahkan efek salju dengan gambar yang bergantian
         const snowflakeImages = [
             'https://i.ibb.co/7tGfYBfB/aztec-1.png',
-            'https://i.ibb.co/sJ3S0ccb/x1000-1.png',
-            'https://i.ibb.co/ynqft2Sf/x100-1.png'
+            'https://i.ibb.co/sJ3S0ccb/x1000-1.png'
         ];
+
+        let snowflakeIndex = 0;
 
         function createSnowflake() {
             const snowflake = document.createElement('img');
             snowflake.classList.add('snowflake');
-            snowflake.src = snowflakeImages[Math.floor(Math.random() * snowflakeImages.length)];
+            snowflake.src = snowflakeImages[snowflakeIndex];
             snowflake.style.left = Math.random() * 100 + 'vw'; // Mengatur posisi acak
             document.body.appendChild(snowflake);
+
+            // Mengubah gambar salju setiap detik
+            snowflakeIndex = (snowflakeIndex + 1) % snowflakeImages.length;
 
             // Menghapus salju setelah mencapai bawah layar
             setTimeout(() => {
@@ -242,8 +247,8 @@
             }, 10000);
         }
 
-        // Membuat efek salju setiap 500ms
-        setInterval(createSnowflake, 500);
+        // Membuat efek salju setiap 1000ms (1 detik) agar gambar bergantian
+        setInterval(createSnowflake, 1000);
     </script>
 </body>
 </html>
