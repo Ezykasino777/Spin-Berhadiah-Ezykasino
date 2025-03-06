@@ -11,6 +11,7 @@
             background: url('https://i.ibb.co/5Xgxcbc0/images-1.webp') no-repeat center center fixed;
             background-size: cover;
             color: white;
+            overflow: hidden;
         }
 
         h1 {
@@ -79,6 +80,22 @@
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
             color: #ffcb00;
         }
+
+        /* Style untuk salju */
+        .snowflake {
+            position: absolute;
+            top: -50px;
+            z-index: 1000;
+            pointer-events: none;
+            animation: snow 10s linear infinite;
+        }
+
+        @keyframes snow {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -187,7 +204,7 @@
                 numberElement.textContent = formattedNumber;
             }
 
-            setInterval(animateNumber, 7000); // Update setiap 30 detik
+            setInterval(animateNumber, 7000); // Update setiap 7 detik
         }
 
         // Menjalankan animasi untuk setiap angka
@@ -206,6 +223,34 @@
         updateNumber("dynamicNumber13");
         updateNumber("dynamicNumber14");
         updateNumber("dynamicNumber15");
+
+        // Menambahkan efek salju
+        const snowflakeImages = [
+            'https://i.ibb.co/7tGfYBfB/aztec-1.png',
+            'https://i.ibb.co/sJ3S0ccb/x1000-1.png',
+            'https://i.ibb.co/27yz5VJm/naga-hitam-1.png',
+            'https://i.ibb.co/9JQkDv9/sweetbonanza-1.png',
+            'https://i.ibb.co/ynqft2Sf/x100-1.png',
+            'https://i.ibb.co/tMRBjDM5/x1000kak-1.png',
+            'https://i.ibb.co/cSgyQC62/x500-1.png',
+            'https://i.ibb.co/vxM6Rp8w/x250-1.png'
+        ];
+
+        function createSnowflake() {
+            const snowflake = document.createElement('img');
+            snowflake.classList.add('snowflake');
+            snowflake.src = snowflakeImages[Math.floor(Math.random() * snowflakeImages.length)];
+            snowflake.style.left = Math.random() * 100 + 'vw'; // Mengatur posisi acak
+            document.body.appendChild(snowflake);
+
+            // Menghapus salju setelah mencapai bawah layar
+            setTimeout(() => {
+                snowflake.remove();
+            }, 10000);
+        }
+
+        // Membuat efek salju setiap 150ms
+        setInterval(createSnowflake, 150);
     </script>
 </body>
 </html>
