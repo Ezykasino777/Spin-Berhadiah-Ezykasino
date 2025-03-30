@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="icon" href="https://i.ibb.co/0D3x5RB/download.png" type="image/png">
+    <link rel="icon" href="https://i.ibb.co/0D3x5RB/download.png" type="image/png">
     <title>Event Balapan Turnover Ezykasino</title>
     <style>
         body {
@@ -12,16 +12,14 @@
             background: url('https://i.ibb.co/Gfd0nMyh/bg.webp') no-repeat center center fixed;
             background-size: cover;
             color: white;
-            overflow-x: hidden; /* Menghindari scroll horizontal */
-            overflow-y: scroll; /* Memungkinkan scroll vertikal */
+            overflow-x: hidden;
+            overflow-y: scroll;
         }
 
         h1 {
             font-size: 3em;
             font-weight: bold;
-            text-shadow: 
-                0 0 10px rgba(249, 225, 42, 0.7), 
-                0 0 20px rgba(240, 236, 10, 0.7);
+            text-shadow: 0 0 10px rgba(249, 225, 42, 0.7), 0 0 20px rgba(240, 236, 10, 0.7);
             color: #674c3f;
             background: linear-gradient(45deg, #ff6a00, #ffcb00);
             -webkit-background-clip: text;
@@ -38,7 +36,7 @@
             border-collapse: collapse;
             background: rgba(0, 0, 0, 0.5);
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            color: rgb(255, 255, 255);
+            color: white;
         }
         th, td {
             border: 2px solid rgb(65, 61, 1);
@@ -50,51 +48,32 @@
             font-weight: bold;
             background: #8B4513;
             color: white;
-            text-shadow: 
-                0 0 10px rgba(255, 255, 255, 0.5), 
-                0 0 20px rgba(255, 255, 255, 0.5);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.5);
             letter-spacing: 1px;
             padding: 15px;
             border-bottom: 3px solid #fff;
         }
-        .up {
-            width: 0;
-            height: 0;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-bottom: 15px solid rgb(2, 221, 2);
-            display: inline-block;
-            margin-left: 5px;
+
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            display: none;
         }
-        .down {
-            width: 0;
-            height: 0;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-top: 15px solid red;
-            display: inline-block;
-            margin-left: 5px;
-        }
-        .number {
+        .popup button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #ff6a00;
+            border: none;
+            color: white;
             font-size: 1.2em;
-            font-weight: bold;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
-            color: #ffcb00;
-        }
-
-        /* Style untuk salju */
-        .snowflake {
-            position: absolute;
-            top: -50px;
-            z-index: 1000;
-            pointer-events: none;
-            animation: snow 10s linear infinite;
-        }
-
-        @keyframes snow {
-            to {
-                transform: translateY(100vh);
-            }
+            cursor: pointer;
+            border-radius: 5px;
         }
     </style>
 </head>
@@ -255,6 +234,19 @@
 
         // Membuat salju setiap 5 detik
         setInterval(createSnowflake, 5000);
+    </script>
+</body>
+</html>
+
+<div id="popup" class="popup">
+        <h2>Event Telah Berakhir</h2>
+        <button onclick="window.location.href='https://t.ly/Bonusezykasino'">Klik Disini</button>
+    </div>
+
+    <script>
+        window.onload = function() {
+            document.getElementById("popup").style.display = "block";
+        };
     </script>
 </body>
 </html>
